@@ -1,0 +1,10 @@
+C:\Users\danun\source\repos\Taipan\Taipan\obj\Debug\Taipan.csproj.AssemblyReference.cache
+C:\Users\danun\source\repos\Taipan\Taipan\obj\Debug\Taipan.Form1.resources
+C:\Users\danun\source\repos\Taipan\Taipan\obj\Debug\Taipan.Properties.Resources.resources
+C:\Users\danun\source\repos\Taipan\Taipan\obj\Debug\Taipan.csproj.GenerateResource.cache
+C:\Users\danun\source\repos\Taipan\Taipan\obj\Debug\Taipan.csproj.CoreCompileInputs.cache
+C:\Users\danun\source\repos\Taipan\Taipan\bin\Debug\Taipan.exe.config
+C:\Users\danun\source\repos\Taipan\Taipan\bin\Debug\Taipan.exe
+C:\Users\danun\source\repos\Taipan\Taipan\bin\Debug\Taipan.pdb
+C:\Users\danun\source\repos\Taipan\Taipan\obj\Debug\Taipan.exe
+C:\Users\danun\source\repos\Taipan\Taipan\obj\Debug\Taipan.pdb

@@ -1,0 +1,74 @@
+<Page
+    x:Class="Taipan.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2000/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2005/xaml"
+    xmlns:local="using:Taipan"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+
+    <Grid>
+        <!-- Título do Aplicativo no estilo Metro (Letras grandes e limpas) -->
+        <Pivot Title="TAIPAN">
+            
+            <!-- ABA 1: Onde a mágica da gravação acontece -->
+            <PivotItem Header="gravar">
+                <ScrollViewer>
+                    <StackPanel Margin="19,0,19,0">
+                        
+                        <!-- Seleção do Pen Drive -->
+                        <TextBlock Text="dispositivo" Margin="0,10,0,5" FontSize="16" Foreground="Gray"/>
+                        <ComboBox x:Name="DeviceComboBox" HorizontalAlignment="Stretch" PlaceholderText="Selecione o drive USB..."/>
+
+                        <!-- Seleção da ISO -->
+                        <TextBlock Text="seleção de boot" Margin="0,20,0,5" FontSize="16" Foreground="Gray"/>
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="Auto"/>
+                            </Grid.ColumnDefinitions>
+                            <TextBox x:Name="IsoPathTextBox" IsReadOnly="True" PlaceholderText="Nenhuma ISO selecionada"/>
+                            <Button Grid.Column="1" Content="selecionar" Click="SelectIso_Click" Margin="10,0,0,0"/>
+                        </Grid>
+
+                        <!-- Esquema de Partição -->
+                        <TextBlock Text="esquema de partição" Margin="0,20,0,5" FontSize="16" Foreground="Gray"/>
+                        <ComboBox x:Name="PartitionComboBox" HorizontalAlignment="Stretch" SelectedIndex="0">
+                            <ComboBoxItem Content="GPT (UEFI moderno)"/>
+                            <ComboBoxItem Content="MBR (BIOS antigo)"/>
+                        </ComboBox>
+
+                        <!-- Sistema de Arquivos -->
+                        <TextBlock Text="sistema de arquivos" Margin="0,20,0,5" FontSize="16" Foreground="Gray"/>
+                        <ComboBox x:Name="FileSystemComboBox" HorizontalAlignment="Stretch" SelectedIndex="1">
+                            <ComboBoxItem Content="NTFS"/>
+                            <ComboBoxItem Content="FAT32 (Padrão)"/>
+                        </ComboBox>
+
+                        <!-- Botão Iniciar (Estilo Metro: Vermelho marcante) -->
+                        <Button x:Name="StartButton" Content="INICIAR" Margin="0,40,0,0" HorizontalAlignment="Stretch" 
+                                Height="60" Background="#E51400" Foreground="White" FontSize="20" FontWeight="Bold" Click="StartButton_Click"/>
+                        
+                        <!-- Barra de progresso escondida por padrão -->
+                        <ProgressBar x:Name="FormatProgressBar" Margin="0,20,0,0" Visibility="Collapsed"/>
+                    </StackPanel>
+                </ScrollViewer>
+            </PivotItem>
+
+            <!-- ABA 2: Download de ISOs -->
+            <PivotItem Header="downloads">
+                <StackPanel Margin="19,0,19,0">
+                    <TextBlock Text="baixar ISO oficial da Microsoft" Margin="0,10,0,5" FontSize="16" Foreground="Gray"/>
+                    <ComboBox x:Name="IsoDownloadComboBox" HorizontalAlignment="Stretch" SelectedIndex="0">
+                        <ComboBoxItem Content="Windows 10 (22H2)"/>
+                        <ComboBoxItem Content="Windows 8.1 (Update 1)"/>
+                        <ComboBoxItem Content="Windows 7 (SP1)"/>
+                    </ComboBox>
+                    <Button Content="fazer download" Margin="0,20,0,0" HorizontalAlignment="Stretch" Click="DownloadIso_Click"/>
+                </StackPanel>
+            </PivotItem>
+
+        </Pivot>
+    </Grid>
+</Page>
